@@ -1,0 +1,30 @@
+### Create Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+    "name": "SÖDERHAMN",
+    "productTypeId": 1,
+    "colourIds": [1, 2]
+}
+
+###
+
+###
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+    "name": "SÖDERHAMN",
+    "productTypeId": 1,
+    "colourIds": [3]
+}
+###
+
+### List Products
+GET http://localhost:8080/api/products
+
+###
+
+### Product Details
+GET http://localhost:8080/api/products/1
