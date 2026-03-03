@@ -21,15 +21,20 @@ public class DataLoader implements CommandLineRunner{
     @Override
     public void run(String... args) {
         // seed product types
-        productTypeRepository.save(new ProductType("Sofa"));
-        productTypeRepository.save(new ProductType("Chair"));
-        productTypeRepository.save(new ProductType("Table"));
-        productTypeRepository.save(new ProductType("Bed"));
+
+        if (productTypeRepository.count() == 0) {
+            productTypeRepository.save(new ProductType("Sofa"));
+            productTypeRepository.save(new ProductType("Chair"));
+            productTypeRepository.save(new ProductType("Table"));
+            productTypeRepository.save(new ProductType("Bed"));
+        }
 
         // seed colours
-        colourRepository.save(new Colour("Blue"));
-        colourRepository.save(new Colour("Ruby"));
-        colourRepository.save(new Colour("Black"));
-        colourRepository.save(new Colour("White"));
+        if (colourRepository.count() == 0) {
+            colourRepository.save(new Colour("Blue"));
+            colourRepository.save(new Colour("Ruby"));
+            colourRepository.save(new Colour("Black"));
+            colourRepository.save(new Colour("White"));
+        }
     }
 }
